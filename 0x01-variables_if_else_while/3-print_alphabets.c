@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - prints the alphabet in lowercase,and then in uppercase,
  * followed by a new line
@@ -6,7 +7,7 @@
  */
 int main(void)
 {
-	char ch;
+	int ch;
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
