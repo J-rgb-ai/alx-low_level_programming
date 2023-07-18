@@ -1,4 +1,4 @@
-#inlude <stdio.h>
+#inlude <main.h>
 
 /**
  * main - prints _putchar
