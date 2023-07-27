@@ -3,19 +3,19 @@
 /**
  * reverse_array - reverses the content of an array of integers
  * @a: an array of integers
- * @n: the number of elements to swap
+ * @n: the number of elements of array
  *
- * Return: nothing
+ * Return: void
  */
 void reverse_array(int *a, int n)
 {
 	int i;
 	int temp;
 
-	for (i = 0; i < n / 2; i++)
+	for (i = 0; i < n--; i++)
 	{
 		temp = a[i];
-		a[i] = a[i - n - 1];
-		a[i - n - 1] = temp;
+		a[i] = a[n];
+		a[n] = temp;
 	}
 }
