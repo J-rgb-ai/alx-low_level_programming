@@ -32,9 +32,9 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0 ; i < ac; i++)
 	{
-		strcpy(result + position, av[i]);
-		position += strlen(av[i]);
-		result[position++] = '\n';
+		strcat(result + position, av[i]);
+		strcat(result + position, "\n");
+		position += strlen(av[i]) + 1;
 	}
 
 	return (result);
