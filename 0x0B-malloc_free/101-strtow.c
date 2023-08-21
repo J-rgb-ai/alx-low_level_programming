@@ -1,76 +1,67 @@
 #include "main.h"
-#include <string.h>
 #include <stdlib.h>
 
 /**
- * count_words - count the number of words in a string,
- * @str: input string
- * Return: numberr off words
+ * ch_free_grid - frees a 2 dimensional array.
+ * @grid: multidimensional aray of char
+ * @height:height of the array.
+ * Return: no return
  */
-int count_words(char *str)
+void ch_free_grid(char **grid, unsigned int height)
 {
-	int count = 0;
-	int in_word = 0;
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
+	if (grid != NULL && height != 0)
 	{
-		if (str[i] != ' ' && in_word == 0)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (str[i] == ' ')
-		{
-			in_word = 0;
-		}
+		for (; height > 0; height--)
+			free(grid[height]);
+		free(grid[height]);
+		free(grid);
 	}
-	return (count);
 }
-
 
 /**
  * strtow - split a string  into words
  * @str: the input string
- * Return: pointerr to an array of words, orr NULL on failure.
+ * Return: pointer of an array of integers
  */
 char **strtow(char *str)
 {
-	int word_count = count_words(str);
-	char **words;
-	char *token = strtok(str, " ");
-	int word_index = 0;
-	int i;
+	char **aout;
+	unsigned int c, height, i, j, a1;
 
 	if (str == NULL || *str == '\0')
+		return (NULL);
+	for (c = height = 0; str[c] != '\0'; c++)
 	{
+		if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
+			height++;
+	}
+	aout = malloc((height + 1) * sizeof(char *));
+	if (aout == NULL || height == 0)
+	{
+		free(aout);
 		return (NULL);
 	}
 
-	words = (char **)malloc(sizeof(char *) * (word_count + 1));
-
-	if (words == NULL)
+	for (i = a1 = 0; i < height; i++)
 	{
-		return (NULL);
-	}
-
-	while (token != NULL)
-	{
-		words[word_index] = strdup(token);
-		
-		if (words[word_index] == NULL)
+		for (c = a1; str[c] != '\0'; c++)
 		{
-			for (i = 0; i < word_index; i++)
+			if (str[c] == ' ')
+				a1++;
+			if (str[c] != ' ' && (str[c + 1] == ' ' || str[c + 1] == '\0'))
 			{
-				free(words[i]);
+				aout[i] = malloc((c - a1 + 2) * sizeof(char));
+				if (aout[i] == NULL)
+				{
+					ch_free_grid(aout, i);
+					return (NULL);
+				}
+				break;
 			}
-			free(words);
-			return (NULL);
 		}
-		word_index++;
-		token = strtok(NULL, " ");
+		for (j = 0; a1 <= c; a1++, j++)
+			aout[i][j] = '\0';
 	}
-	words[word_index] = NULL;
-
-	return (words);
+	aout[i] = NULL;
+	return (aout);
 }
