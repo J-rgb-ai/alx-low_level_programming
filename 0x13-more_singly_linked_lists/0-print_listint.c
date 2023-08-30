@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * print_listint - prints all the elements of a listint_t list
- * @h: pointerr that contains adress of the fist node 
+ * @h: pointer that contains adress of the fist node
  *
  * Return: number off nodes
  */
