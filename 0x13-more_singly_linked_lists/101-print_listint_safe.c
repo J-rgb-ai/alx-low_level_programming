@@ -1,4 +1,5 @@
 #include "lists.h"
+
 /**
  * print_listint_safe - prints  alistint_t linked list
  * @head: pointer to the head node of the list
@@ -13,7 +14,6 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("[%p] %d\n", (void *)slow, slow->n);
 		count++;
-
 		slow = slow->next;
 		fast = fast->next->next;
 
@@ -22,16 +22,16 @@ size_t print_listint_safe(const listint_t *head)
 			printf("[%p] %d\n", (void *)slow, slow->n);
 			count++;
 
-		slow = head;
-		while (slow != fast)
-		{
-			printf("[%p] %d\n", (void *)slow, slow->n);
-			count++;
-			slow = slow->next;
-			fast = fast->next;
-		}
-		printf("[%p] %d\n", (void *)slow, slow->n);
-		exit(98);
+			slow = head;
+			while (slow != fast)
+			{
+				printf("[%p] %d\n", (void *)slow, slow->n);
+				count++;
+				slow = slow->next;
+				fast = fast->next;
+			}
+			printf("-> [%p] %d\n", (void *)slow, slow->n);
+			exit(98);
 		}
 	}
 	if (slow != NULL)
@@ -40,4 +40,4 @@ size_t print_listint_safe(const listint_t *head)
 		count++;
 	}
 	return (count);
-}		
+}
