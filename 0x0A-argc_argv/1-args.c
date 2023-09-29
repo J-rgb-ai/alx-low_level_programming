@@ -1,15 +1,14 @@
 #include <stdio.h>
 #include "main.h"
-
 /**
  * main - starting point
  * @argc: argument count
  * @argv: argument vector
- * Return: 0 success
+ * Return: 0 sucess
  */
 int main(int argc, char *argv[])
 {
-	printf("%s\n", argv[0]);
-	(void) argc;
+	printf("%d\n", argc - 1);
+	(void) argv;
 	return (0);
 }
