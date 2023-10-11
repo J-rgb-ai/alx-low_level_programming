@@ -4,7 +4,7 @@
 #include <stdio.h>
 /**
  * op_add - performs addition
- * @add: first int
+ * @a: first int
  * @b: second int
  * Return: integer result
  */
@@ -33,7 +33,7 @@ int op_mul(int a, int b)
 	return (a * b);
 }
 /**
- * op_iv - performs division on integers
+ * op_div - performs division on integers
  * @a: first integer
  * @b: second integer
  * Return: integer
