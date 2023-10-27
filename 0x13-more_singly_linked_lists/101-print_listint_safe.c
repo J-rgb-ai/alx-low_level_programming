@@ -15,8 +15,8 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		printf("[%p] %d\n", (void *)slow, slow->n);
 		count++;
-		slow = slow = slow->next;
-		fast = fast = fast->next->next;
+		slow = slow->next;
+		fast = fast->next->next;
 
 		if (slow == fast)
 		{
@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 			slow = slow->next;
 			fast = fast->next;
 		}
-		printf("-> [%d\n", (void *)slow, slow->n);
+		printf("-> [%p] %d\n", (void *)slow, slow->n);
 		exit(98);
 	}
 	if (slow != NULL)
