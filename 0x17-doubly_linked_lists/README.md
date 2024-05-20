@@ -1,11 +1,28 @@
-Data structures, as the term implies, are a way of structuring data in order to efficiently store, find, use, and create data, depending on the task at hand. 
+# Project: 0x17. C - Doubly linked lists
 
-If data is a plate of food, data structures are your utensils (algorithms would be how to effectively use those utensils in this analogy).
+## Resources
 
-Just as you will likely select a spoon to eat a bowl of soup rather than a knife, you will learn over time to select and properly use data structures which fit the nature of the data you are working with.
+#### Read or watch:
 
-When you begin learning basic data structures such as arrays and linked lists, you will start to conceptualize how data is stored, searched, and edited, and what these operations will contribute to the space/time complexity of your program at runtime (this will make more sense once you start to learn about Big O notation). 
+* [What is a Doubly Linked List](https://intranet.alxswe.com/rltoken/C5_IRM981SVn8oA8RP3gag)
+## Learning Objectives
 
-As you continue to learn more complex data structures, you may notice that you need to think more abstractly and deliberately in order to properly implement them. But with patience and practice you will begin to see patterns emerge that will allow you to intuitively see which situation calls for which data structure, just as you know to pick up a spoon when you see a bowl of soup.
+### General
 
+* What is a doubly linked list
+* How to use doubly linked lists
+* Understand and know how to implement the various operations (deletion, insertion, etc) with doubly linked lists
+* Start to look for the right source of information without too much help
+## Tasks
 
+| Task | File |
+| ---- | ---- |
+| 0. Print list | [0-print_dlistint.c](./0-print_dlistint.c) |
+| 1. List length | [1-dlistint_len.c](./1-dlistint_len.c) |
+| 2. Add node | [2-add_dnodeint.c](./2-add_dnodeint.c) |
+| 3. Add node at the end | [3-add_dnodeint_end.c](./3-add_dnodeint_end.c) |
+| 4. Free list | [4-free_dlistint.c](./4-free_dlistint.c) |
+| 5. Get node at index | [5-get_dnodeint.c](./5-get_dnodeint.c) |
+| 6. Sum list | [6-sum_dlistint.c](./6-sum_dlistint.c) |
+| 7. Insert at index | [7-insert_dnodeint.c](./7-insert_dnodeint.c), [2-add_dnodeint.c](./2-add_dnodeint.c), [3-add_dnodeint_end.c](./3-add_dnodeint_end.c) |
+| 8. Delete at index | [8-delete_dnodeint.c](./8-delete_dnodeint.c) |
